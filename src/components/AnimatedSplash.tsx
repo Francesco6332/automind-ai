@@ -1,5 +1,5 @@
 import * as SplashScreen from 'expo-splash-screen';
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Animated, Easing, Platform, StyleSheet } from 'react-native';
 
 const LOGO = require('../../assets/splash-logo.png');
@@ -18,8 +18,8 @@ type Props = {
 };
 
 export default function AnimatedSplash({ isAppReady, onFinish }: Props) {
-  const scale = useRef(new Animated.Value(1)).current;
-  const opacity = useRef(new Animated.Value(1)).current;
+  const [scale] = useState(() => new Animated.Value(1));
+  const [opacity] = useState(() => new Animated.Value(1));
   const [minTimeElapsed, setMinTimeElapsed] = useState(false);
 
   // Gentle pulse while the app is loading
