@@ -7,7 +7,8 @@
     "icon": "./assets/icon.png",
     "userInterfaceStyle": "light",
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier": "com.anonymous.automind-ai"
     },
     "android": {
       "adaptiveIcon": {
@@ -20,6 +21,21 @@
     },
     "web": {
       "favicon": "./assets/favicon.png"
-    }
+    },
+    "plugins": [
+      [
+        "expo-splash-screen",
+        {
+          "image": "./assets/splash-logo.png",
+          "imageWidth": 280,
+          "resizeMode": "contain",
+          "backgroundColor": "#101820",
+          "android": {
+            "image": "./assets/splash-logo-android.png",
+            "imageWidth": 288
+          }
+        }
+      ]
+    ]
   }
 }
